@@ -26,6 +26,8 @@ function calculateProfitAndLoss(initial, quantity, current) {
     showOutput(
       `Hey, the loss is ${loss} and the percent is ${lossPercentage.toFixed(2)}%`
     );
+
+    outputBox.style.color = 'red';
   } else if (current > initial) {
     var profit = (current - initial) * quantity;
     var profitPercentage = (profit / (initial*quantity)) * 100;
@@ -33,8 +35,10 @@ function calculateProfitAndLoss(initial, quantity, current) {
     showOutput(
       `Hey, the profit is ${profit} and the percent is ${profitPercentage.toFixed(2)}%`
     );
+    outputBox.style.color = 'green';
   } else {
     showOutput(`No pain no gain and no gain no pain`);
+    outputBox.style.color = 'black';
   }
 }
 
