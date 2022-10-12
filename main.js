@@ -12,25 +12,23 @@ function submitHandler() {
   var curr = Number(currentPrice.value);
 
   if(!ip || !qty || !curr){
-	alert("Please fill up all the given fields")
+	  alert("Please fill up all the given fields")
   }else{
-	calculateProfitAndLoss(ip, qty, curr);
+	  calculateProfitAndLoss(ip, qty, curr);
   }
-
-  
 }
 
 function calculateProfitAndLoss(initial, quantity, current) {
   if (initial > current) {
     var loss = (initial - current) * quantity;
-    var lossPercentage = (loss / initial) * 100;
+    var lossPercentage = (loss / (initial*quantity)) * 100;
 
     showOutput(
       `Hey, the loss is ${loss} and the percent is ${lossPercentage.toFixed(2)}%`
     );
   } else if (current > initial) {
     var profit = (current - initial) * quantity;
-    var profitPercentage = (profit / initial) * 100;
+    var profitPercentage = (profit / (initial*quantity)) * 100;
 
     showOutput(
       `Hey, the profit is ${profit} and the percent is ${profitPercentage.toFixed(2)}%`
